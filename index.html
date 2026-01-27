@@ -1,0 +1,61 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GhostTrader Performance</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            :root { --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --acc: #38bdf8; --win: #4ade80; --loss: #fb7185; }
+            body { background: var(--bg); color: var(--text); font-family: sans-serif; padding: 2rem; max-width: 900px; margin: auto; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+            .card { background: var(--card); padding: 1.5rem; border-radius: 12px; border: 1px solid #334155; text-align: center; }
+            .card h2 { font-size: 0.8rem; text-transform: uppercase; color: var(--acc); margin: 0; }
+            .card p { font-size: 2rem; font-weight: bold; margin: 0.5rem 0; }
+            canvas { background: var(--card); padding: 1rem; border-radius: 12px; margin-bottom: 2rem; }
+            table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; }
+            th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #334155; }
+            th { background: #334155; color: var(--acc); }
+            .win { color: var(--win); } .loss { color: var(--loss); }
+        </style>
+    </head>
+    <body>
+        <h1>👻 GhostTrader <span style="color:var(--acc)">Live Stats</span></h1>
+        
+        <div class="grid">
+            <div class="card"><h2>Win Rate</h2><p>0.0%</p></div>
+            <div class="card"><h2>Señales</h2><p>0</p></div>
+            <div class="card"><h2>Aciertos</h2><p>0</p></div>
+        </div>
+
+        <canvas id="equityChart" width="400" height="150"></canvas>
+
+        <table>
+            <thead><tr><th>Fecha</th><th>Activo</th><th>Patrón</th><th>Resultado</th></tr></thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+
+        <script>
+            const ctx = document.getElementById('equityChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Curva de Aciertos (Teórica)',
+                        data: [],
+                        borderColor: '#38bdf8',
+                        tension: 0.3,
+                        fill: false
+                    }]
+                },
+                options: { plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#334155' } } } }
+            });
+        </script>
+        <p style="text-align:center; opacity:0.5; margin-top:2rem;">Actualizado: 2026-01-27 22:39 UTC</p>
+    </body>
+    </html>
+    
