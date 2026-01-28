@@ -26,9 +26,9 @@
             <h1>👻 GhostTrader Live Metrics</h1>
             
             <div class="grid">
-                <div class="card"><h2>Win Rate</h2><div class="val">27.3%</div></div>
-                <div class="card"><h2>Total Equity</h2><div class="val">$957.72</div></div>
-                <div class="card"><h2>Auditadas</h2><div class="val">22</div></div>
+                <div class="card"><h2>Win Rate</h2><div class="val">29.6%</div></div>
+                <div class="card"><h2>Total Equity</h2><div class="val">$950.80</div></div>
+                <div class="card"><h2>Auditadas</h2><div class="val">27</div></div>
             </div>
 
             <h3 style="color:#38bdf8;">🏆 Top 3 ETFs (Por Profit Acumulado)</h3>
@@ -37,15 +37,15 @@
                 <div class="rank-card">
                     <div class="rank-number">#1</div>
                     <div style="font-size:1.4rem; font-weight:bold;">BNB-USD</div>
-                    <div class="win" style="font-size:1.1rem;">+2.46%</div>
-                    <div class="sub">5 operaciones</div>
+                    <div class="win" style="font-size:1.1rem;">+2.98%</div>
+                    <div class="sub">6 operaciones</div>
                 </div>
         
                 <div class="rank-card">
                     <div class="rank-number">#2</div>
                     <div style="font-size:1.4rem; font-weight:bold;">AVAX-USD</div>
-                    <div class="win" style="font-size:1.1rem;">+-0.02%</div>
-                    <div class="sub">2 operaciones</div>
+                    <div class="win" style="font-size:1.1rem;">+0.05%</div>
+                    <div class="sub">3 operaciones</div>
                 </div>
         
                 <div class="rank-card">
@@ -67,6 +67,41 @@
                 </thead>
                 <tbody>
     
+                    <tr>
+                        <td>01-27T22:58</td>
+                        <td><b>BNB-USD</b></td>
+                        <td>NEUTRAL</td>
+                        <td class="win">WIN</td>
+                        <td class="win">+0.52%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:58</td>
+                        <td><b>ADA-USD</b></td>
+                        <td>BULL_BREAKOUT</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.32%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:57</td>
+                        <td><b>ETH-USD</b></td>
+                        <td>BULL_BREAKOUT</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.07%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:57</td>
+                        <td><b>AVAX-USD</b></td>
+                        <td>BULL_BREAKOUT</td>
+                        <td class="win">WIN</td>
+                        <td class="win">+0.07%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:57</td>
+                        <td><b>DOGE-USD</b></td>
+                        <td>BULL_BREAKOUT</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.68%</td>
+                    </tr>
                     <tr>
                         <td>01-27T22:54</td>
                         <td><b>BNB-USD</b></td>
@@ -227,9 +262,9 @@
                 new Chart(document.getElementById('equityChart'), {
                     type: 'line',
                     data: {
-                        labels: ['01-27T22:39', '01-27T22:39', '01-27T22:39', '01-27T22:39', '01-27T22:44', '01-27T22:44', '01-27T22:44', '01-27T22:44', '01-27T22:45', '01-27T22:45', '01-27T22:45', '01-27T22:45', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:54', '01-27T22:54', '01-27T22:54', '01-27T22:54', '01-27T22:54'],
+                        labels: ['01-27T22:39', '01-27T22:39', '01-27T22:39', '01-27T22:39', '01-27T22:44', '01-27T22:44', '01-27T22:44', '01-27T22:44', '01-27T22:45', '01-27T22:45', '01-27T22:45', '01-27T22:45', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:51', '01-27T22:54', '01-27T22:54', '01-27T22:54', '01-27T22:54', '01-27T22:54', '01-27T22:57', '01-27T22:57', '01-27T22:57', '01-27T22:58', '01-27T22:58'],
                         datasets: [{
-                            data: [998.94, 990.5, 995.62, 994.41, 992.33, 983.47, 988.23, 986.33, 983.17, 975.81, 979.55, 977.66, 976.74, 969.85, 967.65, 963.15, 967.14, 960.13, 959.91, 957.6, 953.8, 957.72],
+                            data: [998.94, 990.5, 995.62, 994.41, 992.33, 983.47, 988.23, 986.33, 983.17, 975.81, 979.55, 977.66, 976.74, 969.85, 967.65, 963.15, 967.14, 960.13, 959.91, 957.6, 953.8, 957.72, 950.73, 950.93, 949.82, 946.34, 950.8],
                             borderColor: '#38bdf8',
                             tension: 0.4,
                             fill: false,
