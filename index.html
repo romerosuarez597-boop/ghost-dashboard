@@ -1,1 +1,119 @@
-<html><body>Dashboard en espera de datos</body></html>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GhostTrader Performance</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body { background:#0f172a; color:#f8fafc; font-family:sans-serif; padding:20px; }
+            .container { max-width:1000px; margin:auto; }
+            .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-bottom:20px; }
+            .card { background:#1e293b; padding:15px; border-radius:12px; border:1px solid #334155; text-align:center; }
+            .ranking-grid { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-bottom:30px; }
+            .rank-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding:15px; border-radius:12px; border:1px solid #38bdf8; position:relative; }
+            .rank-number { position:absolute; top:5px; right:10px; font-size:1.2rem; font-weight:bold; color:#38bdf8; opacity:0.5; }
+            h2 { font-size:0.7rem; color:#38bdf8; text-transform:uppercase; margin:0; }
+            .val { font-size:1.8rem; font-weight:bold; margin:5px 0; }
+            .sub { font-size:0.8rem; opacity:0.7; }
+            table { width:100%; border-collapse:collapse; background:#1e293b; border-radius:12px; }
+            th, td { padding:10px; border-bottom:1px solid #334155; text-align:left; }
+            .win { color:#4ade80; } .loss { color:#f87171; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>👻 GhostTrader Live Metrics</h1>
+            
+            <div class="grid">
+                <div class="card"><h2>Win Rate</h2><div class="val">25.0%</div></div>
+                <div class="card"><h2>Total Equity</h2><div class="val">$994.41</div></div>
+                <div class="card"><h2>Auditadas</h2><div class="val">4</div></div>
+            </div>
+
+            <h3 style="color:#38bdf8;">🏆 Top 3 ETFs (Por Profit Acumulado)</h3>
+            <div class="ranking-grid">
+    
+                <div class="rank-card">
+                    <div class="rank-number">#1</div>
+                    <div style="font-size:1.4rem; font-weight:bold;">BNB-USD</div>
+                    <div class="win" style="font-size:1.1rem;">+0.57%</div>
+                    <div class="sub">1 operaciones</div>
+                </div>
+        
+                <div class="rank-card">
+                    <div class="rank-number">#2</div>
+                    <div style="font-size:1.4rem; font-weight:bold;">ETH-USD</div>
+                    <div class="win" style="font-size:1.1rem;">+-0.06%</div>
+                    <div class="sub">1 operaciones</div>
+                </div>
+        
+                <div class="rank-card">
+                    <div class="rank-number">#3</div>
+                    <div style="font-size:1.4rem; font-weight:bold;">BTC-USD</div>
+                    <div class="win" style="font-size:1.1rem;">+-0.07%</div>
+                    <div class="sub">1 operaciones</div>
+                </div>
+        
+            </div>
+
+            <div style="background:#1e293b; padding:20px; border-radius:12px; margin-bottom:20px;">
+                <canvas id="equityChart" height="100"></canvas>
+            </div>
+
+            <table>
+                <thead>
+                    <tr><th>Fecha</th><th>ETF</th><th>Patrón</th><th>Resultado</th><th>Retorno</th></tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td>01-27T22:39</td>
+                        <td><b>BTC-USD</b></td>
+                        <td>BULLISH_MOMENTUM</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.07%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:39</td>
+                        <td><b>BNB-USD</b></td>
+                        <td>BULLISH_MOMENTUM</td>
+                        <td class="win">WIN</td>
+                        <td class="win">+0.57%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:39</td>
+                        <td><b>ADA-USD</b></td>
+                        <td>BULLISH_MOMENTUM</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.79%</td>
+                    </tr>
+                    <tr>
+                        <td>01-27T22:39</td>
+                        <td><b>ETH-USD</b></td>
+                        <td>BULLISH_MOMENTUM</td>
+                        <td class="loss">LOSS</td>
+                        <td class="loss">-0.06%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script>
+                new Chart(document.getElementById('equityChart'), {
+                    type: 'line',
+                    data: {
+                        labels: ['01-27T22:39', '01-27T22:39', '01-27T22:39', '01-27T22:39'],
+                        datasets: [{
+                            data: [998.94, 990.5, 995.62, 994.41],
+                            borderColor: '#38bdf8',
+                            tension: 0.4,
+                            fill: false,
+                            borderWidth: 2
+                        }]
+                    },
+                    options: { plugins:{legend:{display:false}}, scales:{ x:{ticks:{display:false}} } }
+                });
+            </script>
+        </div>
+    </body>
+    </html>
+    
